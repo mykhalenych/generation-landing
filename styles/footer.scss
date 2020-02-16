@@ -1,0 +1,105 @@
+$lg:1024px;
+@mixin for-large-up {
+    @media screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin for-large-down {
+    @media screen and (max-width: $lg - 1) {
+        @content;
+    }
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    width: 1440px;
+    height: 130px;
+    background-color: #FBFBFB;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 90px;
+    margin-top: 61px;
+    @include for-large-up {
+        margin-bottom: 0;
+    }
+    &__block {
+        display: flex;
+        padding: 0;
+        margin: 40px 50px 40px 40px;
+        max-height: 50px;
+        width: 250px;
+        @include for-large-up {
+            margin: 40px 70px 40px 160px
+        }
+        &__description {
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #1968FC;
+            background: rgba(25, 104, 252, 0.05);
+        }
+    }
+    &__nav {
+        display: none;
+        @include for-large-up {
+            display: block;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        &__item {
+            // margin: 40px 0 40px 0;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            width: 120px;
+            height: 50px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #000000;
+            justify-content: center;
+        }
+        &__item:last-child {
+            width: 120px;
+        }
+        &__link {
+            text-decoration: none;
+            color: #000000;
+        }
+    }
+    &__fb {
+        margin: 55px 23px 55px 70px;
+    }
+    &__inst {
+        margin: 55px 117px 55px 0;
+        @include for-large-up {
+            margin: 55px 80px 55px 0;
+        }
+    }
+    &__image {
+        position: absolute;
+        max-width: 55px;
+        max-height: 60px;
+        bottom: 0;
+        right: 40px;
+        @include for-large-up {
+            max-width: 90px;
+            max-height: 100px;
+            right: 160px;
+        }
+    }
+}

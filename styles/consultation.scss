@@ -1,0 +1,88 @@
+$lg:1024px;
+@mixin for-large-up {
+    @media screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin for-large-down {
+    @media screen and (max-width: $lg - 1) {
+        @content;
+    }
+}
+
+.consultation {
+    background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson26/hw1/PleaseVisitDesktopSiteSectionBackground.png);
+    padding-bottom: 60px;
+    @include for-large-up {
+        padding-bottom: 30px;
+        position: relative;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 60px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0;
+        margin-top: 60px;
+        padding: 60px 60px 0 60px;
+        @include for-large-up {
+            padding: 80px 160px 0 160px;
+            margin-top: 90px;
+        }
+    }
+    &__line {
+        width: 80px;
+        height: 2px;
+        margin: 0;
+        background-color: #FFFFFF;
+        box-shadow: 0px 2px 0px #D1E1FE;
+        padding: 0;
+        margin: 0px 0px 0 60px;
+        @include for-large-up {
+            margin: 0 0 0 120px;
+        }
+    }
+    &__description {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        margin: 38px 60px 0 60px;
+        @include for-large-up {
+            margin: 48px 640px 0 160px;
+        }
+    }
+    &__btn {
+        background: #FFFFFF;
+        width: 320px;
+        height: 50px;
+        margin: 50px 260px 30px 60px;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: #1968FC;
+        @include for-large-up {
+            margin: 40px 960px 80px 160px;
+        }
+    }
+    &__image {
+        display: none;
+        @include for-large-up {
+            max-height: 450px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+        }
+    }
+}
